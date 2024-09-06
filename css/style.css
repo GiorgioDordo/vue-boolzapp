@@ -1,13 +1,29 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 body {
     font-family: Arial, sans-serif;
     width: 100vw;
     height: 100vh;
     background-image: linear-gradient(rgb(0,150,136), 10%, grey, 10%,rgb(217,219,212));
+    padding-top: 3vh;
+}
+
+.boolzapp {
+    width: 80vw;
+}
+
+.left {
+    flex-basis: 35%;
+    background-color: red;
+    height: 94vh;
+}
+
+.right {
+    flex-basis: 65%;
+    background-color: blue;
 }
 
