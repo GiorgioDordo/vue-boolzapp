@@ -47,7 +47,7 @@
                             <p class="last-message">{{contact.messages[contact.messages.length - 1].message}}</p>
                         </div>
                         <div>
-                            <span class="date">12/10/21 20.30</span>
+                            <span class="date me-1">12/10/21 20.30</span>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
             <div class="chat d-flex flex-column pt-4 gap-3">
                 <div v-if="selectedContact !== null && contacts[selectedContact]">
                     <div v-for="message in contacts[selectedContact].messages" 
-                         :class="['container', message.status === 'sent' ? 'chat-right justify-content-end' : 'chat-left justify-content-start', 'd-flex', 'align-items-center']">
+                         :class="['container', message.status === 'sent' ? 'chat-right justify-content-end mb-1' : 'chat-left justify-content-start mb-1', 'd-flex', 'align-items-center']">
                         <span :class="message.status === 'sent' ? 'message-field-me' : 'message-field'">{{ message.message }}</span>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
 
                 <a href="#"><i class="fa-regular fa-face-smile fs-4 text-secondary"></i></a>
 
-                <input class="flex-grow-1 border-0 rounded-2 p-2" type="text" placeholder="Scrivi un messaggio">
+                <input class="flex-grow-1 border-0 rounded-2 p-2" type="text" placeholder="Scrivi un messaggio" @keyup.enter="addNewMessage(newMessage)" v-model="newMessage" >
 
                 <a href="#"><i class="fa-solid fa-microphone fs-4 text-secondary"></i></i></a>
             </div>

@@ -173,9 +173,25 @@ createApp({
 methods: {
     selectContact(index) {
         this.selectedContact = index;
-    }
+    },
+
+    addNewMessage(message) {
+        message.length > 0 ? this.contacts[this.selectedContact].messages.push({message: message, status: 'sent'}) : '';
+        this.newMessage = '';
+        
+        setTimeout(() => {
+            this.contacts[this.selectedContact].messages.push({
+                message: 'De peffo!',
+                status: 'received'
+            });
+        }, 1000);
+    },
+
+    
 }
 
 }).mount('#app')
+
+
 
 
