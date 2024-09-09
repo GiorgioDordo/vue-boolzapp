@@ -165,10 +165,16 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            selectedContact: null
     }
 },
 
+methods: {
+    selectContact(index) {
+        this.selectedContact = index;
+    }
+}
 
 }).mount('#app')
 

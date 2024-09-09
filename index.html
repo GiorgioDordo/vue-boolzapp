@@ -39,29 +39,28 @@
             </div>
 
             <div class=" d-flex flex-column">
-                <div v-for="contact in contacts"  class="contact d-flex pt-3 pb-1 border-bottom">
+                <div v-for="(contact, index) in contacts"  class="contact d-flex pt-3 pb-1 border-bottom" @click="selectContact(index)">
                     <img :src="contact.avatar" class="ms-3"alt="">
                     <div class="d-flex flex-grow-1 justify-content-between ms-2">
                         <div class="d-flex flex-column">
                             <h5 class="name">{{contact.name}}</h5>
-                            <p class="message">{{contact.messages[0].message}}</p>
+                            <p class="last-message">{{contact.messages[contact.messages.length - 1].message}}</p>
                         </div>
                         <div>
-                            <p class="last-messagge"></p>
-                            <p class="last-messagge"></p>
+                            <span class="date">12/10/21 20.30</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="right" id="app2">
+        <div class="right">
             <div class="header-right d-flex align-items-center p-3 justify-content-between">
                 <div class="d-flex flex-row align-items-center">
-                    <img src="/img/avatar_2.png" alt="">
+                    <img :src="selectedContact !== null ? contacts[selectedContact].avatar : '/img/default_avatar.png'" alt="">
                     <div class="d-flex flex-column ms-2">
-                        <span class="name">Me</span>
-                        <span class="last-messagge">dfagadfgadfgdfag</span>
+                        <span class="name">{{ selectedContact ? contacts[selectedContact].name : 'Select a contact' }}</span>
+                        <span class="last-message" v-if="selectedContact !== null">{{ contacts[selectedContact].messages[contacts[selectedContact].messages.length - 1].message }}</span>
                     </div>
                 </div>
                 <div class="d-flex gap-3">
@@ -69,10 +68,11 @@
                     <a class="text-black" href="#"><i class="fa-solid fa-paperclip"></i></a>
                     <a class="text-black" href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                 </div>
+
             </div>
             <div class="chat d-flex flex-column pt-4 gap-3">
                 <div class="container chat-right d-flex justify-content-end align-items-center ">
-                    <span class='message-field-me'>asdasdsa</span>
+                    <span class='message-field-me' v-if="selectedContact !== null">{{ contacts[selectedContact].messages[contacts[selectedContact].messages.length - 1].message }}</span>
                 </div>
 
                 <div class=" container chat-left d-flex justify-content-start align-items-center">

@@ -59,9 +59,15 @@ body {
     margin: 0;
 }
 
-.message {
+.last-message {
     margin: 0;
     font-size: 15px;
+    color: grey;
+}
+
+.date {
+    font-size: 12px;
+    color: grey;
 }
 
 .contact {
