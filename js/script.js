@@ -167,7 +167,7 @@ createApp({
                 }
             ],
             selectedContact: null
-    }
+    }  
 },
 
 methods: {
