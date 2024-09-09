@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="boolzapp container-fluid d-flex m-auto">
+    <div id="app" class="boolzapp container-fluid d-flex m-auto">
         <div class="left">
 
             <div class="header-left d-flex align-items-center p-3 justify-content-between">
@@ -29,7 +29,7 @@
                     <i class="fa-solid fa-bell-slash border border-1 rounded-circle"></i>
                 </div>
                 <div class="ms-3">
-                    <h5 class="name"">Ricevi notifiche di nuovi messaggi</h5>
+                    <h5 class="name">Ricevi notifiche di nuovi messaggi</h5>
                     <a href="#" class="message text-black">Attiva notifiche dekstop</a>
                 </div>
             </div>
@@ -38,136 +38,45 @@
                 <input class="search-contacts" type="text" placeholder="Angelino">
             </div>
 
-            <div class=" d-flex flex-column p-3">
-                <div class="contact d-flex pt-3 pb-1 border-bottom">
-                    <img src="/img/avatar_1.png" alt="">
+            <div class=" d-flex flex-column">
+                <div v-for="contact in contacts"  class="contact d-flex pt-3 pb-1 border-bottom">
+                    <img :src="contact.avatar" class="ms-3"alt="">
                     <div class="d-flex flex-grow-1 justify-content-between ms-2">
                         <div class="d-flex flex-column">
-                            <h5 class="name">Maksim</h5>
-                            <p class="message">Sono io il capotreno</p>
+                            <h5 class="name">{{contact.name}}</h5>
+                            <p class="message">{{contact.messages[0].message}}</p>
                         </div>
                         <div>
-                            <p class="last-messagge">12:55</p>
+                            <p class="last-messagge"></p>
+                            <p class="last-messagge"></p>
                         </div>
                     </div>
                 </div>
-
-                <div class="contact d-flex pt-3 pb-1 border-bottom">
-                    <img src="/img/avatar_1.png" alt="">
-                    <div class="d-flex flex-grow-1 justify-content-between ms-2">
-                        <div class="d-flex flex-column">
-                            <h5 class="name">Angelino</h5>
-                            <p class="message">Sono io il capotreno</p>
-                        </div>
-                        <div>
-                            <p class="last-messagge">12:55</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact d-flex pt-3 pb-1 border-bottom">
-                    <img src="/img/avatar_1.png" alt="">
-                    <div class="d-flex flex-grow-1 justify-content-between ms-2">
-                        <div class="d-flex flex-column">
-                            <h5 class="name">Angelino</h5>
-                            <p class="message">Sono io il capotreno</p>
-                        </div>
-                        <div>
-                            <p class="last-messagge">12:55</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact d-flex pt-3 pb-1 border-bottom">
-                    <img src="/img/avatar_1.png" alt="">
-                    <div class="d-flex flex-grow-1 justify-content-between ms-2">
-                        <div class="d-flex flex-column">
-                            <h5 class="name">Angelino</h5>
-                            <p class="message">Sono io il capotreno</p>
-                        </div>
-                        <div>
-                            <p class="last-messagge">12:55</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact d-flex pt-3 pb-1 border-bottom">
-                    <img src="/img/avatar_1.png" alt="">
-                    <div class="d-flex flex-grow-1 justify-content-between ms-2">
-                        <div class="d-flex flex-column">
-                            <h5 class="name">Angelino</h5>
-                            <p class="message">Sono io il capotreno</p>
-                        </div>
-                        <div>
-                            <p class="last-messagge">12:55</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact d-flex pt-3 pb-1 border-bottom">
-                    <img src="/img/avatar_1.png" alt="">
-                    <div class="d-flex flex-grow-1 justify-content-between ms-2">
-                        <div class="d-flex flex-column">
-                            <h5 class="name">Angelino</h5>
-                            <p class="message">Sono io il capotreno</p>
-                        </div>
-                        <div>
-                            <p class="last-messagge">12:55</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact d-flex pt-3 pb-1 border-bottom">
-                    <img src="/img/avatar_1.png" alt="">
-                    <div class="d-flex flex-grow-1 justify-content-between ms-2">
-                        <div class="d-flex flex-column">
-                            <h5 class="name">Angelino</h5>
-                            <p class="message">Sono io il capotreno</p>
-                        </div>
-                        <div>
-                            <p class="last-messagge">12:55</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact d-flex pt-3 pb-1 border-bottom">
-                    <img src="/img/avatar_1.png" alt="">
-                    <div class="d-flex flex-grow-1 justify-content-between ms-2">
-                        <div class="d-flex flex-column">
-                            <h5 class="name">Angelino</h5>
-                            <p class="message">Sono io il capotreno</p>
-                        </div>
-                        <div>
-                            <p class="last-messagge">12:55</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact d-flex pt-3 pb-1 border-bottom">
-                    <img src="/img/avatar_1.png" alt="">
-                    <div class="d-flex flex-grow-1 justify-content-between ms-2">
-                        <div class="d-flex flex-column">
-                            <h5 class="name">Angelino</h5>
-                            <p class="message">Sono io il capotreno</p>
-                        </div>
-                        <div>
-                            <p class="last-messagge">12:55</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
 
-        <div class="right">
-            <div class="header-right"></div>
+        <div class="right" id="app2">
+            <div class="header-right d-flex align-items-center p-3 justify-content-between">
+                <div class="d-flex flex-row align-items-center">
+                    <img src="/img/avatar_2.png" alt="">
+                    <div class="d-flex flex-column ms-2">
+                        <span class="name">Me</span>
+                        <span class="last-messagge">dfagadfgadfgdfag</span>
+                    </div>
+                </div>
+                <div class="d-flex gap-3">
+                    <a class="text-black" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a class="text-black" href="#"><i class="fa-solid fa-paperclip"></i></a>
+                    <a class="text-black" href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </div>
+            </div>
             <div class="chat d-flex flex-column pt-4 gap-3">
-                <div class="container chat-left d-flex justify-content-start align-items-center ">
-                    <span class="message-field message-field-me">Sono io il capotreno adfasfasdfasdfasdfasdfasddfasdf Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati vero a, voluptatem dolorem eum veniam explicabo! Laudantium ex placeat est, quasi odio ea magnam, provident totam sequi eos voluptas quidem!</span>
+                <div class="container chat-right d-flex justify-content-end align-items-center ">
+                    <span class='message-field-me'>asdasdsa</span>
                 </div>
 
-                <div class=" container chat-right d-flex justify-content-end align-items-center">
-                    <span class="message-field">Sono io il capotreno Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis beatae repudiandae, aliquid facilis enim error quod voluptatibus quae ratione ex? Earum alias minima molestias cum. Possimus odit saepe porro eius?</span>
+                <div class=" container chat-left d-flex justify-content-start align-items-center">
+                    <span class="message-field">asdasdasd</span>
                 </div>
             </div>
 
@@ -182,7 +91,8 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
