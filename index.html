@@ -57,7 +57,7 @@
         <div class="right">
             <div class="header-right d-flex align-items-center p-3 justify-content-between">
                 <div class="d-flex flex-row align-items-center">
-                    <img :src="selectedContact !== null ? contacts[selectedContact].avatar : '/img/default_avatar.png'" alt="">
+                    <img :src="selectedContact !== null ? contacts[selectedContact].avatar : ''" alt="">
                     <div class="d-flex flex-column ms-2">
                         <span class="name">{{ selectedContact ? contacts[selectedContact].name : 'Select a contact' }}</span>
                         <span class="last-message" v-if="selectedContact !== null">{{ contacts[selectedContact].messages[contacts[selectedContact].messages.length - 1].message }}</span>
