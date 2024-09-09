@@ -107,6 +107,7 @@ img {
     /* ! Why this is not working? */
     /* height: 10%; */
     padding-left: 20px;
+    d-flex
 }
 
 .chat-right {
