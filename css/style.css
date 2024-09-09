@@ -104,16 +104,11 @@ img {
 
 .chat-left {
     width: 100%;
-    /* ! Why this is not working? */
-    /* height: 10%; */
     padding-left: 20px;
-    d-flex
 }
 
 .chat-right {
     width: 100%;
-    /* ! Why this is not working? */
-    /* height: 10%; */ 
     padding-right: 20px;
 }
 
