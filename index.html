@@ -74,7 +74,7 @@
                 <div v-if="selectedContact !== null && contacts[selectedContact]">
                     <div v-for="message in contacts[selectedContact].messages" 
                          :class="['container', message.status === 'sent' ? 'chat-right justify-content-end mb-1' : 'chat-left justify-content-start mb-1', 'd-flex', 'align-items-center']">
-                        <div :class="message.status === 'sent' ? 'message-field-me' : 'message-field'">
+                        <div :class="message.status === 'sent' ? 'message-field-me' : 'message-field'" @click="deleteSelectedMessage(indexMessage)">
                             <span>{{ message.message }}</span>
                             <p class="date">{{ message.date }}</p>
                         </div>

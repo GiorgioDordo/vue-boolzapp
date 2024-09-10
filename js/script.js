@@ -189,6 +189,15 @@ methods: {
             });
         }, 1000);
     },
+
+    selectMessage(messageIndex) {
+        this.selectedMessage = messageIndex;
+    },
+
+    // delete the selected message
+    deleteSelectedMessage(IndexMessage) {
+        this.contacts[this.selectedContact].messages.splice(this.selectedMessage, 1);
+    },
 },
 
 computed: {
