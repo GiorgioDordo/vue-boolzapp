@@ -74,7 +74,10 @@
                 <div v-if="selectedContact !== null && contacts[selectedContact]">
                     <div v-for="message in contacts[selectedContact].messages" 
                          :class="['container', message.status === 'sent' ? 'chat-right justify-content-end mb-1' : 'chat-left justify-content-start mb-1', 'd-flex', 'align-items-center']">
-                        <span :class="message.status === 'sent' ? 'message-field-me' : 'message-field'">{{ message.message }}</span>
+                        <div :class="message.status === 'sent' ? 'message-field-me' : 'message-field'">
+                            <span>{{ message.message }}</span>
+                            <p class="date">{{ message.date }}</p>
+                        </div>
                     </div>
                 </div>
                 <div v-else class="text-center">

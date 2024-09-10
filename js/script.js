@@ -183,6 +183,7 @@ methods: {
         
         setTimeout(() => {
             this.contacts[this.selectedContact].messages.push({
+                date: new Date().toLocaleString(),
                 message: 'De peffo!',
                 status: 'received'
             });
