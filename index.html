@@ -35,11 +35,11 @@
             </div>
 
             <div class="search d-flex justify-content-center align-items-center">
-                <input class="search-contacts" type="text" placeholder="Angelino">
+                <input class="search-contacts" type="text" placeholder="Angelino" v-model="search">
             </div>
 
             <div class=" d-flex flex-column">
-                <div v-for="(contact, index) in contacts"  class="contact d-flex pt-3 pb-1 border-bottom" @click="selectContact(index)">
+                <div v-for="(contact, index) in filterContacts"  class="contact d-flex pt-3 pb-1 border-bottom" @click="selectContact(index)">
                     <img :src="contact.avatar" class="ms-3"alt="">
                     <div class="d-flex flex-grow-1 justify-content-between ms-2">
                         <div class="d-flex flex-column">

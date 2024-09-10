@@ -166,7 +166,9 @@ createApp({
                     ],
                 }
             ],
-            selectedContact: null
+            selectedContact: null,
+
+            search: ''
     }  
 },
 
@@ -186,8 +188,12 @@ methods: {
             });
         }, 1000);
     },
+},
 
-    
+computed: {
+    filterContacts() {
+        return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.search.toLowerCase()));
+    }
 }
 
 }).mount('#app')
