@@ -173,10 +173,12 @@ createApp({
 },
 
 methods: {
+    //**returning the index of the selected contact */
     selectContact(index) {
         this.selectedContact = index;
     },
 
+    //**adding a new message to the selected contact in the chat*/
     addNewMessage(message) {
         message.length > 0 ? this.contacts[this.selectedContact].messages.push({message: message, status: 'sent'}) : '';
         this.newMessage = '';
@@ -189,17 +191,19 @@ methods: {
             });
         }, 1000);
     },
+    
+    // ! tried to select the message so i can delete it but it doesn't work
+    // selectMessage(messageIndex) {
+    //     this.selectedMessage = messageIndex;
+    // },
 
-    selectMessage(messageIndex) {
-        this.selectedMessage = messageIndex;
-    },
-
-    // delete the selected message
+    //** delete the selected message */
     deleteSelectedMessage(IndexMessage) {
         this.contacts[this.selectedContact].messages.splice(this.selectedMessage, 1);
     },
 },
 
+// ** filtering the contacts */
 computed: {
     filterContacts() {
         return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.search.toLowerCase()));
