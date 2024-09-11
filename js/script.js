@@ -180,7 +180,7 @@ methods: {
 
     //**adding a new message to the selected contact in the chat*/
     addNewMessage(message) {
-        message.length > 0 ? this.contacts[this.selectedContact].messages.push({message: message, status: 'sent'}) : '';
+        message.length > 0 ? this.contacts[this.selectedContact].messages.push({message: message, status: 'sent', date: new Date().toLocaleString()}) : '';
         this.newMessage = '';
         
         setTimeout(() => {
